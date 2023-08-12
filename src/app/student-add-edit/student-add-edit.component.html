@@ -1,0 +1,65 @@
+<!-- <<p>student-add-edit works!</p> -->
+
+<div mat-dialog-title>
+    <h1 style="color: orangered;"> Student Form</h1>
+</div>
+<form [formGroup]="studentForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field appearance="outline" color="warn">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" placeholder="Enter your name" formControlName="student_name">
+          </mat-form-field>
+    </div>
+    <div class="row">
+      <!-- <mat-form-field appearance="outline" color="warn">
+        <mat-label>Age</mat-label>
+        <mat-select formControlName=" student_age">
+          <mat-option *ngFor="let val of ageOptions" value="val">
+           {{val}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <mat-form-field appearance="outline" color="warn">
+        <mat-label>Age</mat-label>
+        <input matInput type="text" placeholder="Enter your age" formControlName="student_age">
+      </mat-form-field>
+    </div>
+    <!-- <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Favorite food</mat-label>
+            <mat-select>
+              <mat-option >
+                
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div> -->
+    <div class="row">
+        <mat-form-field appearance="outline" color="warn">
+            <mat-label>Institute Name</mat-label>
+            <input matInput type="text" placeholder="Enter your institue name" formControlName="student_institute">
+          </mat-form-field>
+    </div>
+    <div class="row">
+          <mat-radio-group aria-label="Select an option" formControlName="gender">
+            <mat-label><strong>Gender</strong></mat-label>
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+            <mat-radio-button value="others">Others</mat-radio-button>
+          </mat-radio-group>
+          
+
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline" color="warn">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Enter your email" formControlName="email">
+          </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false"> Cancel </button>
+    <button mat-raised-button color="warn" type="submit"> {{data ? 'Update': 'Save'}} </button>
+</div>
+</form>
